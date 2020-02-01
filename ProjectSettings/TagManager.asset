@@ -6,6 +6,7 @@ TagManager:
   tags:
   - boundary
   - uninfected
+  - Infected
   layers:
   - Default
   - TransparentFX

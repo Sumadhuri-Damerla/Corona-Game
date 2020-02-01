@@ -38,18 +38,19 @@ public class Collision : MonoBehaviour
     }
 
    
-    void OnTriggerStay2D(Collider2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (other.gameObject.tag.Equals("Player"))
             {
-                if (spriteRenderer.sprite == sprite1)
+            Debug.Log("Test");
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    ChangeTheSprite();
-                    hb.LoseHealth();
+                    if (spriteRenderer.sprite == sprite1)
+                    {
+                        ChangeTheSprite();
+                        hb.LoseHealth();
+                    }
                 }
             }
-        }
     }
 }
