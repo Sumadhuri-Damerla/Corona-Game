@@ -192,6 +192,7 @@ MonoBehaviour:
   sprite1: {fileID: 21300000, guid: f97d0f9d80acffc4f811f84a1863042e, type: 3}
   sprite2: {fileID: 21300000, guid: ac67f67ecc8846d4786c64a8a13d1748, type: 3}
   hb: {fileID: 1597039078}
+  h: {fileID: 0}
 --- !u!58 &367023325
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -361,7 +362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464950653}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9677737, y: 10.0563545, z: 0}
+  m_LocalPosition: {x: -1.9677737, y: 5.83, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 349757135}
@@ -404,6 +405,7 @@ MonoBehaviour:
   sprite1: {fileID: 21300000, guid: f97d0f9d80acffc4f811f84a1863042e, type: 3}
   sprite2: {fileID: 21300000, guid: ac67f67ecc8846d4786c64a8a13d1748, type: 3}
   hb: {fileID: 1597039078}
+  h: {fileID: 0}
 --- !u!58 &499896927
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -419,7 +421,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.1321416
+  m_Radius: 4.3554955
 --- !u!50 &499896928
 Rigidbody2D:
   serializedVersion: 4
@@ -593,7 +595,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.7580066
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -746,7 +748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858519462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9677737, y: -9.9436455, z: 0}
+  m_LocalPosition: {x: -1.9677737, y: -5.8, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 349757135}
@@ -868,6 +870,7 @@ MonoBehaviour:
   sprite1: {fileID: 21300000, guid: f97d0f9d80acffc4f811f84a1863042e, type: 3}
   sprite2: {fileID: 21300000, guid: ac67f67ecc8846d4786c64a8a13d1748, type: 3}
   hb: {fileID: 1597039078}
+  h: {fileID: 0}
 --- !u!212 &974802539
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1192,6 +1195,8 @@ MonoBehaviour:
   sprite3: {fileID: 936856478}
   sprite4: {fileID: 1698019094}
   sprite5: {fileID: 1282848991}
+  maxTimer: 2
+  maxCounter: 6
 --- !u!4 &1597039079
 Transform:
   m_ObjectHideFlags: 0
@@ -1483,6 +1488,7 @@ MonoBehaviour:
   sprite1: {fileID: 21300000, guid: f97d0f9d80acffc4f811f84a1863042e, type: 3}
   sprite2: {fileID: 21300000, guid: ac67f67ecc8846d4786c64a8a13d1748, type: 3}
   hb: {fileID: 1597039078}
+  h: {fileID: 0}
 --- !u!58 &2121869160
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1741,6 +1747,7 @@ GameObject:
   - component: {fileID: 2132737621}
   - component: {fileID: 2132737622}
   - component: {fileID: 2132737624}
+  - component: {fileID: 2132737623}
   m_Layer: 0
   m_Name: Player_obj
   m_TagString: Player
@@ -1829,9 +1836,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.1713138
+  m_Mass: 2.7535772
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1850,9 +1857,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4064d5baf645e546882be195f21901c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.2
   forceX: 0
   forceY: 0
+--- !u!114 &2132737623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132737618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7b824dd2539d944bc5ea20884e48e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healed: 0
+  hb: {fileID: 1597039078}
 --- !u!58 &2132737624
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1868,7 +1889,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.125
+  m_Radius: 1.7249025
 --- !u!1001 &1345358046079005505
 PrefabInstance:
   m_ObjectHideFlags: 0

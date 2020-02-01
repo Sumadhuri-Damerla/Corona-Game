@@ -8,6 +8,7 @@ public class Collision : MonoBehaviour
     public Sprite sprite2; // Drag your second sprite here
     private Collider2D anything;
     public Healthbar hb;
+    public Heal h;
 
     private SpriteRenderer spriteRenderer;
 
@@ -16,41 +17,25 @@ public class Collision : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
         if (spriteRenderer.sprite == null) // if the sprite on spriteRenderer is null then
             spriteRenderer.sprite = sprite1; // set the sprite to sprite1
+
     }
 
     void Update()
     {
-        
+        /*
+        if (h.healed == true)
+        {
+            ChangeTheSprite();
+        }
+        */
     }
 
-    void ChangeTheSprite()
+   public void ChangeTheSprite()
     {
         if (spriteRenderer.sprite == sprite1) // if the spriteRenderer sprite = sprite1 then change to sprite2
         {
             spriteRenderer.sprite = sprite2;
         }
-        /*
-        else
-        {
-            spriteRenderer.sprite = sprite1; // otherwise change it back to sprite1
-        }
-        */
     }
 
-   
-    void OnCollisionStay2D(Collision2D other)
-    {
-            if (other.gameObject.tag.Equals("Player"))
-            {
-            Debug.Log("Test");
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    if (spriteRenderer.sprite == sprite1)
-                    {
-                        ChangeTheSprite();
-                        hb.LoseHealth();
-                    }
-                }
-            }
-    }
 }
