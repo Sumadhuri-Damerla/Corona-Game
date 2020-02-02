@@ -28,12 +28,8 @@ public class Healthbar : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            Debug.Log("time");
-            Debug.Log(counter);
             GainHealth();
             timer = maxTimer;
-
-            
         }
         
         

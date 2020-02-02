@@ -19,14 +19,12 @@ public class Heal : MonoBehaviour
         
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Infected"))
+        if (Input.GetKeyDown(KeyCode.Space) && other.gameObject.tag.Equals("Infected")) 
         {
-           
-            if (Input.GetKeyDown(KeyCode.Space))
+
             {
-                Debug.Log("heal worked!");
                 hb.LoseHealth();
                 other.gameObject.GetComponent<Collision>().ChangeTheSprite();
                 other.gameObject.tag = "uninfected";
