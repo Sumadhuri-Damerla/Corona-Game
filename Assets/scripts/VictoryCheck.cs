@@ -20,11 +20,11 @@ public class VictoryCheck : MonoBehaviour
     {
         if (person1.tag.Equals("uninfected") && person2.tag.Equals("uninfected") && person3.tag.Equals("uninfected") && person4.tag.Equals("uninfected") && person5.tag.Equals("uninfected"))
         {
-            SceneManager.LoadScene(sceneName: "Victory");
+           // SceneManager.LoadScene(sceneName: "Victory");
         }
         else if (person1.tag.Equals("Infected") && person2.tag.Equals("Infected") && person3.tag.Equals("Infected") && person4.tag.Equals("Infected") && person5.tag.Equals("Infected"))
             {
-                SceneManager.LoadScene(sceneName: "GameOver");
+            //    SceneManager.LoadScene(sceneName: "GameOver");
             }
     }
 }

@@ -11,10 +11,15 @@ public class Collision : MonoBehaviour
     public Heal h;
 
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
+        GameObject child = transform.GetChild(0).gameObject;
+        animator = child.GetComponent<Animator>();
+
+        spriteRenderer = child.GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
+        
         if (spriteRenderer.sprite == null) // if the sprite on spriteRenderer is null then
             spriteRenderer.sprite = sprite1; // set the sprite to sprite1
 
@@ -32,10 +37,14 @@ public class Collision : MonoBehaviour
 
    public void ChangeTheSprite()
     {
-        if (spriteRenderer.sprite == sprite1) // if the spriteRenderer sprite = sprite1 then change to sprite2
-        {
+        
+           
+            animator.SetBool("infected",false);
+            
+            
             spriteRenderer.sprite = sprite2;
-        }
+           
+          
     }
 
 }
