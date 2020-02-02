@@ -57,7 +57,7 @@ public class playerController : MonoBehaviour
                     animator.SetFloat("Speed", Mathf.Abs(forceX));
                     forceX = speed; forceY = 0;
                     transform.eulerAngles = new Vector3(0, 0, -90);
-                 }
+                }
                 if (Input.GetKey("escape"))
                 {
                     Application.Quit();
