@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class playerController : MonoBehaviour
 {
 
@@ -9,14 +8,14 @@ public class playerController : MonoBehaviour
 
     private Rigidbody2D player;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
     public float forceX = 0, forceY = 0;
-    private float timer = 10;
-    public float maxTimer = 1f;
+    private float timer;
+    public float maxTimer = .2f;
     private SpriteRenderer spriteRenderer;
     public Sprite hero;
     public Sprite hero2;
     public Sprite hero3;
-
-
+    public Animator animator;
+ 
     // Use this for initialization
     void Start()
     {
@@ -30,44 +29,35 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         
-        timer -= Time.deltaTime;
-        if (timer < 0)
-        {
-            timer = maxTimer;
-        }
+        
         if (Input.anyKey)
         {
 
             
             if (Input.GetKey("up"))
             {
-                
-                if (timer < 0)
-                {
-                    Debug.Log("up");
-                    timer = maxTimer;
-                    spriteRenderer.sprite = hero;
-                }
-                spriteRenderer.sprite = hero3;
-                
+                animator.SetFloat("Speed", Mathf.Abs(forceY));
                 forceX = 0; forceY = speed;
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
                 if (Input.GetKey("down"))
                 {
+                    animator.SetFloat("Speed", Mathf.Abs(forceY));
                     forceX = 0; forceY = -speed;
                     transform.eulerAngles = new Vector3(0, 0, 180);
             }
                 if (Input.GetKey("left"))
                 {
+                    animator.SetFloat("Speed", Mathf.Abs(forceX));
                     forceX = -speed; forceY = 0;
                     transform.eulerAngles = new Vector3(0, 0, 90);
             }
                 if (Input.GetKey("right"))
                 {
+                    animator.SetFloat("Speed", Mathf.Abs(forceX));
                     forceX = speed; forceY = 0;
-                transform.eulerAngles = new Vector3(0, 0, -90);
-            }
+                    transform.eulerAngles = new Vector3(0, 0, -90);
+                 }
                 if (Input.GetKey("escape"))
                 {
                     Application.Quit();
@@ -88,7 +78,7 @@ public class playerController : MonoBehaviour
 
                 //Gage's comment because I hated it was any key to move
                 player.MovePosition(new Vector2(playerX + forceX, playerY + forceY));
-
+            animator.SetFloat("Speed", 0);
             spriteRenderer.sprite = hero2;
             }
         }

@@ -2284,6 +2284,7 @@ GameObject:
   - component: {fileID: 2132737624}
   - component: {fileID: 2132737623}
   - component: {fileID: 2132737625}
+  - component: {fileID: 2132737626}
   m_Layer: 0
   m_Name: Player_obj
   m_TagString: Player
@@ -2391,10 +2392,11 @@ MonoBehaviour:
   speed: 0.2
   forceX: 0
   forceY: 0
-  maxTimer: 10
+  maxTimer: 1
   hero: {fileID: 21300000, guid: 5e5539e5c343895448e94720bac1e06b, type: 3}
   hero2: {fileID: 21300000, guid: d26d4754baee6f542ba11de32e0e7614, type: 3}
   hero3: {fileID: 21300000, guid: b014e334ea611544588f31ff4b1ded27, type: 3}
+  animator: {fileID: 2132737626}
 --- !u!114 &2132737623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,6 +2453,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 3.25}
   m_EdgeRadius: 0
+--- !u!95 &2132737626
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132737618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c6726f2dd94d174c920b84640ce6b8e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1345358046079005505
 PrefabInstance:
   m_ObjectHideFlags: 0
