@@ -7,6 +7,7 @@ TagManager:
   - boundary
   - uninfected
   - Infected
+  - Fire
   layers:
   - Default
   - TransparentFX
