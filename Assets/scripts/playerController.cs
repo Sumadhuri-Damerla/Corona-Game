@@ -29,7 +29,10 @@ public class playerController : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SoundManagerScript.PlaySound("spacebutton");
+        }
         
         if (Input.anyKey)
         {
@@ -40,26 +43,34 @@ public class playerController : MonoBehaviour
                 animator.SetFloat("Speed", Mathf.Abs(forceY));
                 forceX = 0; forceY = speed;
                 transform.eulerAngles = new Vector3(0, 0, 0);
+                SoundManagerScript.PlaySound("footsteps");
+
             }
-                if (Input.GetKey("down"))
+            if (Input.GetKey("down"))
                 {
                     animator.SetFloat("Speed", Mathf.Abs(forceY));
                     forceX = 0; forceY = -speed;
                     transform.eulerAngles = new Vector3(0, 0, 180);
+                    SoundManagerScript.PlaySound("running");
+
             }
-                if (Input.GetKey("left"))
+            if (Input.GetKey("left"))
                 {
                     animator.SetFloat("Speed", Mathf.Abs(forceX));
                     forceX = -speed; forceY = 0;
                     transform.eulerAngles = new Vector3(0, 0, 90);
+                    SoundManagerScript.PlaySound("running");
+
             }
-                if (Input.GetKey("right"))
+            if (Input.GetKey("right"))
                 {
                     animator.SetFloat("Speed", Mathf.Abs(forceX));
                     forceX = speed; forceY = 0;
                     transform.eulerAngles = new Vector3(0, 0, -90);
-                }
-                if (Input.GetKey("escape"))
+                    SoundManagerScript.PlaySound("running");
+
+            }
+            if (Input.GetKey("escape"))
                 {
                     Application.Quit();
                 }
