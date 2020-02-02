@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class infectedMovement : MonoBehaviour {
 
-	float movementSpeed = 0.1f;
+	float movementSpeed;
 	Vector2 speed; 
 	Rigidbody2D infPerson;
 	float maxtimer = 2f;
@@ -12,20 +12,38 @@ public class infectedMovement : MonoBehaviour {
 	float dirX = 1;
 	float dirY = 0;
 	bool collided = false;
+    GameObject gameManager;
 
 
-	// Use this for initialization
-	void Start () {
+
+    void Awake()
+    {
+        initializeSpeed(0.1f);
+
+    }
+
+    // Use this for initialization
+    void Start () {
 		infPerson = GetComponent <Rigidbody2D> ();
-		timer = maxtimer;
-		speed = new Vector2(movementSpeed,movementSpeed);
 
+		timer = maxtimer;
+
+    
+        dirX = Random.Range(-1, 2);
+        dirY = Random.Range(-1, 2);
+        if (dirX == 0 && dirY == 0)
+        {
+           dirX = 1f;
+        }
+
+        speed = new Vector2(dirX*movementSpeed,dirY*movementSpeed);
+        gameManager = GameObject.Find("GameHandler");
+        
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-
 
 		timer -= 1*Time.deltaTime;
 
@@ -103,6 +121,11 @@ public class infectedMovement : MonoBehaviour {
 
     }
 
+    public void initializeSpeed(float speed)
+    {
+        movementSpeed = speed;
+
+    }
 
     void OnCollisionEnter2D(Collision2D col)
 	{
@@ -146,6 +169,7 @@ public class infectedMovement : MonoBehaviour {
             Animator anim =  child.GetComponent<Animator>();
             anim.SetBool("infected",true);
             col.gameObject.tag = "Infected";
+            gameManager.GetComponent<initGame>().Infect();
 
 
         }

@@ -69,7 +69,7 @@ public class Healthbar : MonoBehaviour
         */
         else if (counter == 1)
         {
-            SceneManager.LoadScene(sceneName: "GameOver");
+           SceneManager.LoadScene(sceneName: "GameOver");
         }
     }
     public void GainHealth()

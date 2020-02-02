@@ -6,11 +6,12 @@ public class Heal : MonoBehaviour
 {
     public bool healed = false;
     public Healthbar hb;
+    GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameHandler");
     }
 
     // Update is called once per frame
@@ -29,6 +30,8 @@ public class Heal : MonoBehaviour
                 other.gameObject.GetComponent<Collision>().ChangeTheSprite();
                 other.gameObject.tag = "uninfected";
                 healed = true;
+                gameManager.GetComponent<initGame>().Cure();
+                
             }
         }
     }

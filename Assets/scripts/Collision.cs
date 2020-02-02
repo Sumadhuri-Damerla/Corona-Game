@@ -5,10 +5,10 @@ public class Collision : MonoBehaviour
 {
 
     public Sprite sprite1; // Drag your first sprite here
-    public Sprite sprite2; // Drag your second sprite here
+  //  public Sprite sprite2; // Drag your second sprite here
     private Collider2D anything;
-    public Healthbar hb;
-    public Heal h;
+    
+    
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -27,12 +27,7 @@ public class Collision : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (h.healed == true)
-        {
-            ChangeTheSprite();
-        }
-        */
+      
     }
 
    public void ChangeTheSprite()
@@ -40,9 +35,8 @@ public class Collision : MonoBehaviour
         
            
             animator.SetBool("infected",false);
-            
-            
-            spriteRenderer.sprite = sprite2;
+     
+   
            
           
     }

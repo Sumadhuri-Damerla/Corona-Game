@@ -11,9 +11,6 @@ public class playerController : MonoBehaviour
     private float timer;
     public float maxTimer = .2f;
     private SpriteRenderer spriteRenderer;
-    public Sprite hero;
-    public Sprite hero2;
-    public Sprite hero3;
     public Animator animator;
  
     // Use this for initialization
@@ -80,7 +77,7 @@ public class playerController : MonoBehaviour
                 //Gage's comment because I hated it was any key to move
                 player.MovePosition(new Vector2(playerX + forceX, playerY + forceY));
             animator.SetFloat("Speed", 0);
-            spriteRenderer.sprite = hero2;
+            
             }
         }
 
