@@ -23,6 +23,7 @@ public class playerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         timer = maxTimer;
+        SoundManagerScript.PlaySound("theme");
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
