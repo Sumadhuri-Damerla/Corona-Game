@@ -18,7 +18,7 @@ public class Healthbar : MonoBehaviour
     void Start()
     {
         counter = 6;
-        timer = maxTimer;
+        timer = 0f;
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class Healthbar : MonoBehaviour
     {
        
         timer -= Time.deltaTime;
-        if (timer < 0)
+        if (timer < 0 && counter < 6)
         {
             GainHealth();
             timer = maxTimer;
@@ -37,6 +37,7 @@ public class Healthbar : MonoBehaviour
     public void LoseHealth()
     {
         counter--;
+        timer = maxTimer;
         if (counter == 5)
         {
             //GameObject.Destroy(sprite1);
@@ -66,7 +67,7 @@ public class Healthbar : MonoBehaviour
             GameObject.Destroy(sprite5);
         }
         */
-        else if (counter == 0)
+        else if (counter == 1)
         {
             SceneManager.LoadScene(sceneName: "GameOver");
         }
@@ -74,7 +75,7 @@ public class Healthbar : MonoBehaviour
     public void GainHealth()
     {
         
-        if (counter > 5)
+        if (counter > 6)
         {
             counter = maxCounter;
         }
